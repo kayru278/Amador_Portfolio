@@ -1,37 +1,24 @@
 from django.shortcuts import render
-from .models import Project
 
 def portfolio_index(request):
-    projects = Project.objects.all()
-
     context = {
-        'projects': projects,
+        "name": "Kyle Andrei Amador",
+        "tagline": "Graduate of Holy Angel University | Aspiring Web Developer",
+        "about": "Hello! I'm Kyle Andrei Amador. I am passionate about web development and enjoy learning HTML, CSS, JavaScript, Python, and Django.",
 
-        # Personal Information
-        'name': 'Kyle Andrei Amador',
-        'tagline': 'Graduate of Holy Angel University | Aspiring Web Developer',
+        "education": "Holy Angel University",
 
-        'about': '''
-        Hello! I'm Kyle Andrei Amador, a graduate of Holy Angel University.
-        I am passionate about web development and continuously improving my
-        programming skills. I enjoy creating responsive websites and learning
-        technologies such as Python, Django, HTML, CSS, JavaScript, Git,
-        and GitHub.
-        ''',
+        "email": "andreiamador10@gmail.com",
 
-        'education': 'Holy Angel University',
-
-        'email': 'andreiamador10@gmail.com',
-
-        'skills': [
-            'HTML',
-            'CSS',
-            'JavaScript',
-            'Python',
-            'Django',
-            'Git',
-            'GitHub'
-        ],
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Python",
+            "Django",
+            "Git",
+            "GitHub"
+        ]
     }
 
-    return render(request, 'portfolio/index.html', context)
+    return render(request, "portfolio/index.html", context)
